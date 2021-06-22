@@ -1,0 +1,18 @@
+                ____	                  __	           _________	           _________
+                Name	                 Age	            Position	            Location
+                ----	                 ---	            --------	            --------
+         Kenil Patel	|	                  23|	  Software Developer	            New York|
+           John Adam	|	                  34|	             Manager	       San Fransisco|
+Karthik Subramaniyam	|	                  22|	              Intern	              London|
+         Parth Reddy	|	                  33|	      Staff Engineer	      Rio De Generio|
+        Pankaj Dheer	|	                  29|	  Software Developer	            Raileigh|
+        Puneet Esaar	|	                  45|	             Manager	            San Jose|
+          Firoz Khan	|	                  33|	        SRE engineer	            New York|
+     Nitish Bhardwaj	|	                  48|	                 CEO	            New York|
+     Michael Freezer	|	                  34|	           Architect	           Bangalore|
+         Kenil Patel	|	                  23|	  Software Developer	            New York|
+           John Adam	|	                  37|	             Manager	           Hyderabad|
+Karthik Subramaniyam	|	                  22|	              Intern	             Chennai|
+         Parth Reddy	|	                  33|	      Staff Engineer	         Santa Clara|
+          Pankaj Das	|	                  29|	   Content Developer	           New Delhi|
+        Puneet Esaar	|	                  45|	  Principal Engineer	              Sydney|

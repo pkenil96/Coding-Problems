@@ -1,0 +1,1 @@
+This folder stores implementation for all the problems from the book Cracking the Coding Interview by Gayle Laakman Mcdovell. I'll be implmenting all the algorithms and problems in Java.

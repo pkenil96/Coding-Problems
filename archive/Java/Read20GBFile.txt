@@ -1,0 +1,18 @@
+Question: If you have a 10G file and only 2G of memory, how can you fit the file into the memory. Describe the solution and write the code.
+
+Brainstorming:
+
+1) From a programmer's perspective, a file is a contiguos block of memory(logical file). However, it may not be contiguous at the disk level. It is the file manager, on behalf of the operating system, takes request for the to and fro tranfer of data into the disk and maps the logical memory to the physical memory.
+    
+2) In such a scenario, the key is to reduce the disk access as main memory access is much faster than the disk access. The choice of data structure or the file structure is crucial here that ensures that as few disk access as possible are needed.
+
+3) Another technique is to save the previously retrieved data into the memory to avoid future disk access. However, deciding what information is to be saved into the memory needs to be done carefully as we might end up consuming the entire memory otherwise. (Caching)
+
+4) One solution can be External Mergesort Algorithm: A typical merge sort algorithm splits the unsorted list into n sublist each of size 1. Every single element is sorted with respect to itself. Thereafter, each sublist is merged to produce sorted list and the process is repeated until all the sublist are merged to form one single list.
+Similarly, the external merge sort algorithm splits the data/file into chunks of size that can be accomodated in the main memory.
+
+
+Example:
+
+
+
