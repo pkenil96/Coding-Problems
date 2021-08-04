@@ -7,6 +7,7 @@ class TreeNode:
 		self.data = data
 
 
+
 class BST:
 	'''Binary Search Tree class'''
 	def __init__(self):
