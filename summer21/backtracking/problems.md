@@ -1,0 +1,1 @@
+1) [Abbrevation using backtracking](https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/recursion-and-backtracking/abbreviation-suing-backtracking-official/ojquestion) 
