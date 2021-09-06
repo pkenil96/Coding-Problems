@@ -1,0 +1,26 @@
+1) Generic Tree Construction
+2) Display Tree
+3) Size of Tree (Recursive and Iterative)
+4) Maximum in Generic Tree (Recursive and Iterative)
+5) Height of a Generic Tree (Recursive and Iterative)
+6) Traversal (Pre, Post, In)
+7) Level Order Traversal
+8) Level Order Traversal (Line by Line)
+9) Level Order ZigZag
+10) Level Order (More methods)
+11) Mirror Generic Tree
+12) Remove leaves
+13) Linearize Generic Tree
+14) Find in Generic Tree
+15) Distance between two nodes in Generic Tree
+16) Are trees similar in shape
+17) Are trees mirror in shape
+18) Is tree symmetric
+19) Multisolver for generic tree
+20) Predecessor and successor of generic tree
+21) Ceil and floor in generic tree
+22) kth largest element in tree
+23) Node with maximum subtree sum
+24) Diameter of generic tree
+25) Iterative preorder and postorder
+26) Iterable and Iterator
