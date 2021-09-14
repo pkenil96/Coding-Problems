@@ -1,5 +1,12 @@
 class L509Fibonacci {
     
+    public static int fibBruteForce(int n){
+        if(n == 0 || n == 1){
+            return n;
+        }
+        return fibBruteForce(n-1)+fibBruteForce(n-2);
+    }
+
     public static int fibTopDown(int n, Integer[] memo){
         if(n==0||n==1){
             return n;
