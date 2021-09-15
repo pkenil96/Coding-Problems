@@ -4,7 +4,7 @@
 
 import java.util.Scanner;
 
-public class DP1Fibonacci{
+public class DP01Fibonacci{
 
 	public static int fibBruteForce(int n){
 		if(n == 0 || n == 1){

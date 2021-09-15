@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DP3ClimbStairsWithVariableJumps{
+public class DP03ClimbStairsWithVariableJumps{
 	
 	public static int variableJumpsBruteForce(int index, int[] jumps){
 		if(index == jumps.length){

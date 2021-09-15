@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // climbing stairs with either 1, 2 or 3 steps
-public class DP2ClimbStairs{
+public class DP02ClimbStairs{
 	
 	public static int climbStairsBruteForce(int n){
 		if(n < 0){
