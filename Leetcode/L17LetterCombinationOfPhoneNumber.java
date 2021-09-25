@@ -2,14 +2,28 @@ class L17LetterCombinationOfPhoneNumber {
     
     static HashMap<Character, String> map;
     
-    public static void backtrack(String input, String output, List<String> result){
-        if(input.length() == 0){
+    /*public static void backtrack(String input, String output, int index, List<String> result){
+        if(index == input.length()){
             result.add(output);
             return;
         }
-        char ch = input.charAt(0);
+        char ch = input.charAt(index);
         for(int i=0; i<map.get(ch).length(); i++){
-            backtrack(input.substring(1), output+map.get(ch).charAt(i), result);
+            backtrack(input, output+map.get(ch).charAt(i), index+1, result);
+        }    
+    }*/
+    
+    // version with StringBuilder is faster than String
+    public static void backtrack(String input, StringBuilder output, int index, List<String> result){
+        if(index == input.length()){
+            result.add(output.toString());
+            return;
+        }
+        char ch = input.charAt(index);
+        for(int i=0; i<map.get(ch).length(); i++){
+            output.append(map.get(ch).charAt(i));
+            backtrack(input, output, index+1, result);
+            output.setLength(output.length() - 1);
         }    
     }
     
@@ -27,7 +41,8 @@ class L17LetterCombinationOfPhoneNumber {
         map.put('8', "tuv");
         map.put('9', "wxyz");
         List<String> res = new ArrayList<>();
-        backtrack(digits, "", res);
+        backtrack(digits, new StringBuilder(), 0, res);
         return res;
     }
+
 }
