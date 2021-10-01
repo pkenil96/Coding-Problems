@@ -38,6 +38,10 @@ class L796RotateString {
         return false;
     }
     
+    public static boolean solution3(String s1, String s2){
+        return (s1+s1).contains(s2);
+    }
+    
     public boolean rotateString(String s1, String s2) {
         if(s1 == null || s2 == null){
             return false;
@@ -51,7 +55,7 @@ class L796RotateString {
             return true;
         }
         //return solution1(s1, s2);
-        return solution2(s1, s2);
-        // return solution3;
+        //return solution2(s1, s2);
+        return solution3(s1, s2);
     }
 }
