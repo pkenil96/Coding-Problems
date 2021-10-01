@@ -42,12 +42,44 @@ class L239SlidingWindowMaximum {
     
     // solution using deque
     public static int[] solution2(int[] nums, int k){
+        if(k == 1){
+            return nums;
+        }
+        int n = nums.length;
+        int[] result = new int[n-k+1];
         
+        // the front of the deque will store the index of the largest
+        // element of the window and the end of the deque will store the
+        // index of the smallest element in the given window size
+        Deque<Integer> dq = new LinkedList<>();
+        int i=0, j=0, index=0;
+        while(j < n){
+            while(!dq.isEmpty() && nums[dq.peekLast()] < nums[j]){
+                dq.removeLast();
+            }
+            dq.addLast(j);
+            if(j - i == k-1){
+                // check if the largest element has gone out of the window
+                // i points to the extreme left of the window
+                // so if the index of the largest element is smaller than
+                // i, it means it is out of the window and we need to remove it
+                if(dq.peekFirst() < i){
+                    dq.removeFirst();
+                }
+                result[index++] = nums[dq.peekFirst()];
+                i++;
+                j++;
+            } else {
+                j++;
+            }
+        }
+         
+        return result;
     }
     
     public int[] maxSlidingWindow(int[] nums, int k) {
-        return solution0(nums, k);
+        //return solution0(nums, k);
         //return solution1(nums, k);
-        //return solution2(nums, k);
+        return solution2(nums, k);
     }
 }
