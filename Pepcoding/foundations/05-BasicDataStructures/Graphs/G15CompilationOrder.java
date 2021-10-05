@@ -12,6 +12,16 @@ public class G15CompilationOrder {
       }
    }
 
+    public static void topologicalSort(ArrayList<Edge>[] graph, Stack<Integer> stack, boolean[] visited, int src){
+        visited[src] = true;
+        for(Edge edge: graph[src]){
+            if(visited[edge.nbr] == false){
+                topologicalSort(graph, stack, visited, edge.nbr);
+            }
+        }
+        stack.push(src);
+    }
+
    public static void main(String[] args) throws Exception {
       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -30,9 +40,15 @@ public class G15CompilationOrder {
       }
 
       // write your code here
-      Stack<Integer> stack = topologicalSort(graph);
+      Stack<Integer> stack = new Stack<>();
+      boolean[] visited = new boolean[vtces];
+      for(int i=0; i<vtces; i++){
+          if(visited[i] == false){
+              topologicalSort(graph, stack, visited, i);
+          }
+      }
       while(!stack.isEmpty()){
-         System.out.println(stack.pop());
+          System.out.println(stack.pop());
       }
    }
 
