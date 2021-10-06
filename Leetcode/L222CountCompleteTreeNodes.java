@@ -13,7 +13,7 @@
  *     }
  * }
  */
-class 222CountCompleteTreeNodes {
+class L222CountCompleteTreeNodes {
     public int countNodes(TreeNode root) {
         if(root == null){
             return 0;
