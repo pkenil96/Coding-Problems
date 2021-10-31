@@ -40,12 +40,13 @@ class L347TopKFrequentElements {
             map.put(nums[i], map.getOrDefault(nums[i], 0)+1);
         }
         
-        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(new Comparator<Map.Entry<Integer, Integer>>(){
-            public int compare(Map.Entry<Integer, Integer> e1, Map.Entry<Integer, Integer> e2){
-                return e1.getValue() - e2.getValue();
-            }
-        });
+        //PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(new Comparator<Map.Entry<Integer, Integer>>(){
+            //public int compare(Map.Entry<Integer, Integer> e1, Map.Entry<Integer, Integer> e2){
+            //    return e1.getValue() - e2.getValue();
+            //}
+        //});
         
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>((e1, e2) -> e1.getValue() - e2.getValue());
         for(Map.Entry<Integer, Integer> entry: map.entrySet()){
             pq.add(entry);
             if(pq.size() > k){
