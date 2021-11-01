@@ -1,111 +1,44 @@
 class L210CourseScheduleII {
     
-    public static boolean allInOne(ArrayList<ArrayList<Integer>> adjList, boolean[] visited, boolean[] recVisited, int vertex, Stack<Integer> stack){
-        recVisited[vertex] = true;
-        visited[vertex] = true;
-        for(int node: adjList.get(vertex)){
-            if(recVisited[node] == true) return true;
-            if(visited[node] == false){
-                if(allInOne(adjList, visited, recVisited, node, stack) == true){
-                    return true;
-                }   
+    public boolean cycleExists(int node, boolean[] visited, boolean[] path, List<List<Integer>> adjList, Stack<Integer> stack){
+        visited[node] = true;
+        path[node] = true;
+        for(int curr: adjList.get(node)){
+            if(path[curr]==true){
+                return true; //cycle exists
+            }
+            if(visited[curr] == false && cycleExists(curr, visited, path, adjList, stack) == true){
+                return true;
             }
         }
-        stack.push(vertex);
-        recVisited[vertex] = false;
+        stack.push(node);
+        path[node] = false;
         return false;
     }
     
-    public static boolean hasCycle(ArrayList<ArrayList<Integer>> adjList, boolean[] visited, boolean[] recVisited, int vertex){
-        recVisited[vertex] = true;
-        visited[vertex] = true;
-        for(int node: adjList.get(vertex)){
-            if(recVisited[node] == true) return true;
-            if(visited[node] == false){
-                if(hasCycle(adjList, visited, recVisited, node) == true){
-                    return true;
-                }   
-            }
-        }
-        recVisited[vertex] = false;
-        return false;
-    }
-    
-    public static boolean hasCycle(ArrayList<ArrayList<Integer>> adjList){
-        int N = adjList.size();
-        boolean[] visited = new boolean[N];
-        boolean[] recVisited = new boolean[N];
-        for(int i=0; i<N; i++){
-            if(visited[i] == false){
-                if(hasCycle(adjList, visited, recVisited, i) == true){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
-    public static void topologicalSort(int vertex, ArrayList<ArrayList<Integer>> adjList, boolean[] visited, Stack<Integer> stack){
-        visited[vertex] = true;
-        for(int neighbor: adjList.get(vertex)){
-            if(visited[neighbor] == false){
-                topologicalSort(neighbor, adjList, visited, stack);
-            }
-        }
-        stack.push(vertex);
-    }
-    
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        // first we need to form a graph from the given prerequisites
-        ArrayList<ArrayList<Integer>> adjList = new ArrayList<>();
-        for(int i=0; i<numCourses; i++){
+    public int[] findOrder(int n, int[][] prerequisites) {
+        List<List<Integer>> adjList = new ArrayList<>();
+        for(int i=0; i<n; i++){
             adjList.add(new ArrayList<>());
         }
-        // forming the graph by adding edges
         for(int i=0; i<prerequisites.length; i++){
             int src = prerequisites[i][0];
             int des = prerequisites[i][1];
             adjList.get(src).add(des);
-            adjList.set(src, adjList.get(src));
         }
+        boolean[] visited = new boolean[n];
+        boolean[] path = new boolean[n];
+        Stack<Integer> stack = new Stack<>();
         
-        int[] output = new int[numCourses];
-        Stack<Integer> stack = new Stack<>();
-        boolean[] visited = new boolean[numCourses];
-        boolean[] recVisited = new boolean[numCourses];
-        for(int i=0; i<numCourses; i++){
-            if(visited[i] == false){
-                if(allInOne(adjList, visited, recVisited, i, stack) == true){
-                    return new int[0];
-                }
+        for(int i=0; i<n; i++){
+            if(visited[i] == false && cycleExists(i, visited, path, adjList, stack)){
+                return new int[0];
             }
         }
-        int index = stack.size()-1;
-        while(!stack.isEmpty() && index >= 0){
-            output[index--] = stack.pop();
+        int[] result = new int[stack.size()];
+        for(int i=stack.size()-1; i>=0; i--){
+            result[i] = stack.pop();
         }
-        return output;
-        /*
-        // now we check if cycle exists in the graph or not
-        boolean cycleExists = hasCycle(adjList);
-        // if there is a cycle, return empty array
-        if(cycleExists){
-            return new int[0];
-        }
-        // else find the topolofical sorted order of courses
-        int[] output = new int[numCourses];
-        Stack<Integer> stack = new Stack<>();
-        boolean[] visited = new boolean[numCourses];
-        for(int i=0; i<numCourses; i++){
-            if(visited[i] == false){
-                topologicalSort(i, adjList, visited, stack);
-            }
-        }
-        //System.out.println(stack.toString());
-        int index = stack.size()-1;
-        while(!stack.isEmpty() && index >= 0){
-            output[index--] = stack.pop();
-        }
-        return output;*/
+        return result;
     }
 }
