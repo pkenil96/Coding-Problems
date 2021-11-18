@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class CycleInUndirectedGraph {
+public class UndirectedGraph {
     
     public static boolean dfs(ArrayList<ArrayList<Integer>> adjList, boolean[] visited, int src, int parent){
         visited[src] = true;
