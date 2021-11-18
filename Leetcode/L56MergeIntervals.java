@@ -1,4 +1,6 @@
-class L56MergeIntervals {
+import java.util.*;
+
+public class L56MergeIntervals {
     
     public static int[][] method2(int[][] intervals){
         List<int[]> result = new ArrayList<>();

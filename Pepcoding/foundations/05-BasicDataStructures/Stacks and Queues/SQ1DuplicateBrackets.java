@@ -11,7 +11,7 @@ e.g.'
 import java.util.Scanner;
 import java.util.Stack;
 
-public class DuplicateBrackets{
+public class SQ1DuplicateBrackets{
 	public static boolean hasDuplicateBrackets(String s){
         Stack<Character> stack = new Stack<>();
         for(char ch: s.toCharArray()){
