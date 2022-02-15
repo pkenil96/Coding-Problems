@@ -1,3 +1,4 @@
+import java.util.*;
 
 class L696CountBinarySubstrings {
     public int countBinarySubstrings(String s) {

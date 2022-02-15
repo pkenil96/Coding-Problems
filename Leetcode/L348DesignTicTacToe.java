@@ -1,10 +1,12 @@
+
+
 class L348DesignTicTacToe {
     
     int boardSize;
     int[] counts;
     int[][] board;
     
-    public TicTacToe(int n) {
+    public L348DesignTicTacToe(int n) {
         boardSize = n;
         counts = new int[2];
         board = new int[boardSize][boardSize];

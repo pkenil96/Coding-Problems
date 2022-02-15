@@ -1,3 +1,5 @@
+
+
 class L208TrieAutoComplete {
     class TrieNode{
         TrieNode[] children;
@@ -14,7 +16,7 @@ class L208TrieAutoComplete {
     
     TrieNode root;
     
-    public Trie() {
+    public L208TrieAutoComplete() {
         root = new TrieNode();
     }
     

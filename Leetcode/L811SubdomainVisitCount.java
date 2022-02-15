@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L811SubdomainVisitCount {
     public List<String> subdomainVisits(String[] cpdomains) {
         List<String> op = new ArrayList<>();

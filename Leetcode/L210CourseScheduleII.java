@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L210CourseScheduleII {
     
     public boolean cycleExists(int node, boolean[] visited, boolean[] path, List<List<Integer>> adjList, Stack<Integer> stack){

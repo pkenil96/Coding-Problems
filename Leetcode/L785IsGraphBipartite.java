@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L785IsGraphBipartite {
     // we need to color the graph with 2 colors in such a way that no two nodes
     // share the same color, if such a coloring is possible, then the graph is bipartite,

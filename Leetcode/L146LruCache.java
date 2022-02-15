@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L146LRUCache {
     
     /*
@@ -18,7 +20,7 @@ class L146LRUCache {
     static HashMap<Integer, Integer> cacheMap;
     static LinkedHashSet<Integer> cache;
     
-    public LRUCache(int capacity) {
+    public L146LRUCache(int capacity) {
         
         this.capacity = capacity;
         /*

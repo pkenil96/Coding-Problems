@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L72EditDistance {
      
     public int minDistance(String s1, String s2, HashMap<String, Integer> memo){

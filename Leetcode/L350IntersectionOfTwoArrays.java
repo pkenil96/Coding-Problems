@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L350IntersectionOfTwoArrays {
     public int[] intersect(int[] nums1, int[] nums2){
         // the range of the numbers in both the arrays is given

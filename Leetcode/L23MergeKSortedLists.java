@@ -9,6 +9,19 @@
  * }
  */
 
+
+import java.util.*;
+
+class ListNode{
+    int val;
+    ListNode next;
+
+    ListNode(int val){
+        this.val = val;
+        this.next = null;
+    }
+}
+
 class Pair{
     int data;
     ListNode node;

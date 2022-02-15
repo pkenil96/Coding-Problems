@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L347TopKFrequentElements {
     
     // using hashmap - slower (sorting takes nlogn time)

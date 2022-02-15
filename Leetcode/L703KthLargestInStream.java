@@ -1,8 +1,10 @@
+import java.util.*;
+
 class L703KthLargestInStream {
     
     int k;
     PriorityQueue<Integer> pq;
-    public KthLargest(int k, int[] nums) {
+    public L703KthLargestInStream(int k, int[] nums) {
         this.k = k;
         pq = new PriorityQueue<>();
         for(int i=0; i<nums.length; i++){

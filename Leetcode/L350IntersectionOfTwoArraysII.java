@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L350IntersectionOfTwoArraysII {
     
     public int[] method0(int[] nums1, int[] nums2){

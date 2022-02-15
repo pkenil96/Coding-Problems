@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L1047RemoveAllAdjacentDuplicatesInString {
     public String removeDuplicates(String s) {
         Stack<Character> stack = new Stack<>();

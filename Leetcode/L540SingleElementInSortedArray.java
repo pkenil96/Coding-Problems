@@ -18,10 +18,6 @@ class L540SingleElementInSortedArray {
         return -1;
     }
     
-    public int solution1(int[] nums){
-        
-    }
-    
     public int singleNonDuplicate(int[] nums) {
         return solution0(nums);
     }

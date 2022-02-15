@@ -1,59 +1,88 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Stack;
 
-public class L56MergeIntervals {
+class L56MergeIntervals {
     
-    public static int[][] method2(int[][] intervals){
+    static int start = 0;
+    static int end = 1;
+    
+    public int[][] optimized(int[][] intervals){
+        if(intervals.length == 1){
+            return intervals;
+        }
+        
+        Arrays.sort(intervals, (i1, i2) -> i1[0] - i2[0]);
         List<int[]> result = new ArrayList<>();
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-        int startIndex = 0, endIndex = 1;
-        int[] temp = intervals[0];
-        for(int i=1; i<intervals.length; i++){
-            int[] curr = intervals[i];
-            if(curr[startIndex] <= temp[endIndex]){
-                temp[endIndex] = Math.max(curr[endIndex], temp[endIndex]);
+        int[] curr = intervals[0];
+        result.add(curr);
+        
+        for(int[] interval: intervals){
+            if(curr[end] >= interval[start]){
+                curr[end] = Math.max(curr[end], interval[end]);
             } else {
-                result.add(temp);
-                temp = curr;
+                curr = interval;
+                result.add(curr);
             }
         }
-        return result.toArray(new int[result.size()][]);
-        /*int[][] ans = new int[result.size()][2];
-        for(int i=0; i<result.size(); i++){
-            ans[i] = result.get(i);
-        }
-        return ans;
-        */
+        
+        return result.toArray(new int[result.size()][2]);
     }
     
-    public static int[][] method1(int[][] intervals){
-        int startIndex = 0;
-        int endIndex = 1;
-        // stack will store all the merged intervals at the end
-        Stack<int[]> stack = new Stack<>();
-        // sorting the stack by start time of each interval
-        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+    public int[][] withoutUsingStack(int[][] intervals){
+        if(intervals.length == 1){
+            return intervals;
+        }
         
-        stack.push(intervals[0]);
-        for(int i=1; i<intervals.length; i++){
-            int[] top = stack.peek();
-            int[] curr = intervals[i];
-            if(top[endIndex] >= curr[startIndex]){
-                top[endIndex] = Math.max(curr[endIndex], top[endIndex]);
-                stack.pop();
-                stack.push(top);
+        int index = 0;
+        List<int[]> list = new ArrayList<>();
+        Arrays.sort(intervals, (i1, i2) -> i1[0] - i2[0]);
+        while(index < intervals.length){
+            int[] curr = intervals[index];
+            index++;
+            while(index < intervals.length && curr[end] >= intervals[index][start]){
+                curr[start] = Math.min(curr[start], intervals[index][start]);
+                curr[end] = Math.max(curr[end], intervals[index][end]);
+                index++;
+            }
+            list.add(curr);
+        }
+        return list.toArray(new int[list.size()][2]);
+    }
+    
+    public int[][] usingStack(int[][] intervals){
+        if(intervals.length == 1){
+            return intervals;
+        }
+        
+        Stack<int[]> stack = new Stack<>();
+        Arrays.sort(intervals, (i1, i2) -> i1[0] - i2[0]);
+        for(int[] interval: intervals){
+            if(stack.isEmpty()){
+                stack.push(interval);
             } else {
-                stack.push(curr);
+                int[] top = stack.peek();
+                if(top[end] >= interval[start]){
+                    stack.pop();
+                    int[] temp = new int[]{ Math.min(top[start], interval[start]), Math.max(top[end], interval[end])}; 
+                    stack.push(temp);
+                } else {
+                    stack.push(interval);
+                }
             }
         }
-        
-        int[][] res = new int[stack.size()][2];
-        for(int i=stack.size()-1; i>=0; i--){
-            res[i] = stack.pop();
+        int index = stack.size()-1;
+        int[][] mergedIntervals = new int[stack.size()][2];
+        while(!stack.isEmpty()){
+            mergedIntervals[index--] = stack.pop();
         }
-        return res;
+        return mergedIntervals;
     }
     
     public int[][] merge(int[][] intervals) {
-        return method1(intervals);
+        //return usingStack(intervals);   
+        //return withoutUsingStack(intervals);
+        return optimized(intervals);
     }
 }

@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L525ContiguousArray {
     public int findMaxLength(int[] nums) {
         int max = 0;

@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L46Permutations {
     
     public static void permuteUsingSwap(int index, List<Integer> nums, List<List<Integer>> result){

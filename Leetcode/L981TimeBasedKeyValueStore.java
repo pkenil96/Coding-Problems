@@ -1,8 +1,10 @@
+import java.util.*;
+
 class L981TimeBasedKeyValueStore {
 
     /** Initialize your data structure here. */
     HashMap<String, TreeMap<Integer, String>> map;
-    public TimeMap() {
+    public L981TimeBasedKeyValueStore() {
         map = new HashMap<>();
     }
     

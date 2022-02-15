@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L217ContainsDuplicate {
     
     public static boolean method1(int[] nums){

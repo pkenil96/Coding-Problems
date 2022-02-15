@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L349IntersectionOfTwoArrays {
     public int[] intersection(int[] nums1, int[] nums2) {
         int n1 = nums1.length;

@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Trie{    
     TrieNode root;
     static class TrieNode{

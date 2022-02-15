@@ -1,3 +1,5 @@
+import java.util.*;
+
 class L207CourseSchedule {
     
     public boolean cycleFound(int vertex, boolean[] overallVisited, boolean[] pathVisited, List<List<Integer>> adjList){
