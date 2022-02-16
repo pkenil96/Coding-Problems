@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Leetcode2.0</name>
+	<name>topicwise</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -22,7 +22,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1644968038002</id>
+			<id>1644968038004</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
