@@ -1,22 +1,9 @@
 import java.util.*;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
-class Pair{
+class Pair1120{
     double sum;
     double count;
-    Pair(double sum, double count){
+    Pair1120(double sum, double count){
         this.sum = sum;
         this.count = count;
     }
@@ -44,17 +31,17 @@ class L1120MaximumAverageSubtree {
     
     static double gmax;
     
-    public Pair maximumAverageSubtreeUtil(TreeNode root){
+    public Pair1120 maximumAverageSubtreeUtil(TreeNode root){
         if(root == null){
-            return new Pair(0, 0);
+            return new Pair1120(0, 0);
         }
         
-        Pair leftBranch = maximumAverageSubtreeUtil(root.left);
-        Pair rightBranch = maximumAverageSubtreeUtil(root.right);
+        Pair1120 leftBranch = maximumAverageSubtreeUtil(root.left);
+        Pair1120 rightBranch = maximumAverageSubtreeUtil(root.right);
         double sum = root.val + leftBranch.sum + rightBranch.sum;
         double count = 1 + leftBranch.count + rightBranch.count;
         gmax = Math.max(gmax, sum/count);
-        return new Pair(sum, count);
+        return new Pair1120(sum, count);
     }
     
     public double maximumAverageSubtree(TreeNode root) {

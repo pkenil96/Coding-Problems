@@ -10,7 +10,7 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 */
 
-public class ListNode {
+class ListNode {
    int val;
    ListNode next;
    ListNode() {}

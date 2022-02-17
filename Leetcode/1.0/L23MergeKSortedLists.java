@@ -9,7 +9,6 @@
  * }
  */
 
-
 import java.util.*;
 
 class ListNode{
@@ -22,11 +21,11 @@ class ListNode{
     }
 }
 
-class Pair{
+class Pair23{
     int data;
     ListNode node;
     
-    Pair(int data, ListNode node){
+    Pair23(int data, ListNode node){
         this.data = data;
         this.node = node;
     }
@@ -44,18 +43,18 @@ class L23MergeKSortedLists {
             return lists[0];
         }
         
-        PriorityQueue<Pair> pq = new PriorityQueue<>( (p1, p2) -> p1.data - p2.data);
+        PriorityQueue<Pair23> pq = new PriorityQueue<>( (p1, p2) -> p1.data - p2.data);
         ListNode dummy = new ListNode(-9999999), runner = dummy;
         for(int i=0; i<k; i++){
             if(lists[i] == null){
                 continue;
             }
-            Pair pair = new Pair(lists[i].val, lists[i]);
+            Pair23 pair = new Pair23(lists[i].val, lists[i]);
             pq.add(pair);
         }
                 
         while(!pq.isEmpty()){
-            Pair pair = pq.poll();
+            Pair23 pair = pq.poll();
             runner.next = new ListNode(pair.data);
             runner = runner.next;
             if(pair.node != null && pair.node.next != null){

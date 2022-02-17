@@ -1,4 +1,3 @@
-package leetcode;
 
 class AnagramsNoHashMap{
 

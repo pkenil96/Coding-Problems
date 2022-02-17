@@ -1,3 +1,5 @@
+package GraphCycleDetection;
+
 import java.util.*;
 
 public class UndirectedGraph {

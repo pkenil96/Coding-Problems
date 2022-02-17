@@ -1,11 +1,11 @@
 import java.util.*;
 
-class DisjointSet{
+class DisjointSet1971{
     
     int N;
     int[] parent;
     
-    DisjointSet(int N){
+    DisjointSet1971(int N){
         this.N = N;
         this.parent = new int[N];
         for(int i=0; i<N; i++){
@@ -64,7 +64,7 @@ class Solution {
         // return dfs(adjList, source, destination, visited);
         
         // USING DISJOINT SET
-        DisjointSet ds = new DisjointSet(n);
+    	DisjointSet1971 ds = new DisjointSet1971(n);
         for(int[] edge: edges){
             ds.union(edge[0], edge[1]);
         }

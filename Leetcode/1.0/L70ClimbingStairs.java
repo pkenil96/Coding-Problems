@@ -1,4 +1,4 @@
-class Solution {
+class L70ClimbingStairs {
     
     public static int climbStairsTopDown(int n, Integer[] memo){
         if(n < 0){

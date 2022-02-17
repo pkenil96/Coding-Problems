@@ -1,9 +1,9 @@
 import java.util.*;
 
-class Pair{
+class Pair1730{
     int x;
     int y;
-    Pair(int x1, int y1){
+    Pair1730(int x1, int y1){
         x=x1;
         y=y1;
     }
@@ -15,8 +15,8 @@ class L1730ShortestPathToGetFood {
         int ans=0;
         int m = grid.length;
         int n = grid[0].length;
-        Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(src, col));
+        Queue<Pair1730> q = new LinkedList<>();
+        q.add(new Pair1730(src, col));
         visited[src][col] = true;
         
         while(!q.isEmpty()){
@@ -24,7 +24,7 @@ class L1730ShortestPathToGetFood {
             for(int p=0; p<size; p++){
                 int[] dr = {1, -1, 0, 0};
                 int[] dc = {0, 0, 1, -1};
-                Pair pair = q.poll();
+                Pair1730 pair = q.poll();
                 for(int i=0; i<4; i++){
                     int newX = pair.x + dr[i];
                     int newY = pair.y + dc[i];
@@ -35,7 +35,7 @@ class L1730ShortestPathToGetFood {
                         return ans+1;
                     }
                     visited[newX][newY]=true;    
-                    q.add(new Pair(newX, newY));
+                    q.add(new Pair1730(newX, newY));
                 }
             }
             ans++;
