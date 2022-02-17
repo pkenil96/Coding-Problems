@@ -1,5 +1,3 @@
-import java.util.*;
-
 class L98ValidateBinarySearchTree {
     
     public static boolean isValidBST(TreeNode root, long min, long max){
