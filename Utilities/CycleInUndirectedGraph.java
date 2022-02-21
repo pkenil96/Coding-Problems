@@ -1,8 +1,6 @@
-package GraphCycleDetection;
-
 import java.util.*;
 
-public class UndirectedGraph {
+public class CycleInUndirectedGraph {
     
     public static boolean dfs(ArrayList<ArrayList<Integer>> adjList, boolean[] visited, int src, int parent){
         visited[src] = true;

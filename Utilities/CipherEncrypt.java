@@ -28,7 +28,7 @@ public class CipherEncrypt{
         	}
         }
         String output = sb.toString();
-        //System.out.println(output);
-        //System.out.println(expected);
+        System.out.println(output);
+        System.out.println(expected);
     }
 }
