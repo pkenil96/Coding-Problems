@@ -40,10 +40,3 @@ class L981TimeBasedKeyValueStore {
         }
     }
 }
-
-/**
- * Your TimeMap object will be instantiated and called as such:
- * TimeMap obj = new TimeMap();
- * obj.set(key,value,timestamp);
- * String param_2 = obj.get(key,timestamp);
- */
